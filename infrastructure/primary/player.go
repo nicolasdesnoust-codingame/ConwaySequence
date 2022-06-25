@@ -8,9 +8,9 @@ import (
 func main() {
 	initialNumber, iterationCount := parseInputs()
 
-	sequence := usecases.ApplyConwaySequence(initialNumber, iterationCount)
+	sequenceLine := usecases.FindConwaySequenceLineUsecase(initialNumber, iterationCount)
 
-	printSequence(sequence)
+	printSequenceLine(sequenceLine)
 }
 
 func parseInputs() (int, int) {
@@ -23,12 +23,12 @@ func parseInputs() (int, int) {
 	return initialNumber, iterationCount
 }
 
-func printSequence(sequence []int) {
-	if len(sequence) > 0 {
-		fmt.Print(sequence[0])
+func printSequenceLine(sequenceLine []int) {
+	if len(sequenceLine) > 0 {
+		fmt.Print(sequenceLine[0])
 	}
 
-	for i := 1; i < len(sequence); i++ {
-		fmt.Printf(" %d", sequence[i])
+	for i := 1; i < len(sequenceLine); i++ {
+		fmt.Printf(" %d", sequenceLine[i])
 	}
 }

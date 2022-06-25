@@ -6,32 +6,32 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestApplyConwaySequence_ShouldReturnBackInitialNumberForOneIteration(t *testing.T) {
+func TestFindConwaySequenceLine_ShouldReturnBackInitialNumberForOneIteration(t *testing.T) {
 	initialNumber := 1
 	iterationCount := 1
 
-	actualSequence := ApplyConwaySequence(initialNumber, iterationCount)
+	actualSequenceLine := FindConwaySequenceLineUsecase(initialNumber, iterationCount)
 
-	expectedSequence := []int{initialNumber}
-	assert.ElementsMatch(t, expectedSequence, actualSequence)
+	expectedSequenceLine := []int{initialNumber}
+	assert.ElementsMatch(t, expectedSequenceLine, actualSequenceLine)
 }
 
-func TestApplyConwaySequence_ShouldApplyTwice(t *testing.T) {
+func TestFindConwaySequenceLine_ShouldFindSecondLine(t *testing.T) {
 	initialNumber := 1
 	iterationCount := 2
 
-	actualSequence := ApplyConwaySequence(initialNumber, iterationCount)
+	actualSequenceLine := FindConwaySequenceLineUsecase(initialNumber, iterationCount)
 
-	expectedSequence := []int{1, 1}
-	assert.ElementsMatch(t, expectedSequence, actualSequence)
+	expectedSequenceLine := []int{1, 1}
+	assert.ElementsMatch(t, expectedSequenceLine, actualSequenceLine)
 }
 
-func TestApplyConwaySequence_ShouldApplyMultipleTimes(t *testing.T) {
+func TestFindConwaySequenceLine_ShouldIterateMultipleTimes(t *testing.T) {
 	initialNumber := 1
 	iterationCount := 6
 
-	actualSequence := ApplyConwaySequence(initialNumber, iterationCount)
+	actualSequenceLine := FindConwaySequenceLineUsecase(initialNumber, iterationCount)
 
-	expectedSequence := []int{3, 1, 2, 2, 1, 1}
-	assert.ElementsMatch(t, expectedSequence, actualSequence)
+	expectedSequenceLine := []int{3, 1, 2, 2, 1, 1}
+	assert.ElementsMatch(t, expectedSequenceLine, actualSequenceLine)
 }

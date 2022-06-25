@@ -1,22 +1,22 @@
 package domain
 
-type ConwaySequence struct {
+type ConwaySequenceLine struct {
 	numbers []int
 }
 
-func NewConwaySequence(numbers []int) *ConwaySequence {
-	return &ConwaySequence{numbers: numbers}
+func NewConwaySequenceLine(numbers []int) *ConwaySequenceLine {
+	return &ConwaySequenceLine{numbers: numbers}
 }
 
-func CreateInitialConwaySequence(initialNumber int) *ConwaySequence {
-	return NewConwaySequence([]int{initialNumber})
+func CreateInitialConwaySequenceLine(initialNumber int) *ConwaySequenceLine {
+	return NewConwaySequenceLine([]int{initialNumber})
 }
 
-func (sequence *ConwaySequence) GetNumbers() []int {
+func (sequence *ConwaySequenceLine) GetNumbers() []int {
 	return sequence.numbers
 }
 
-func (sequence *ConwaySequence) NextSequence() *ConwaySequence {
+func (sequence *ConwaySequenceLine) NextLine() *ConwaySequenceLine {
 	nextNumbers := []int{}
 
 	for i := 0; i < len(sequence.numbers); i++ {
@@ -29,10 +29,10 @@ func (sequence *ConwaySequence) NextSequence() *ConwaySequence {
 		i += occurences - 1
 	}
 
-	return NewConwaySequence(nextNumbers)
+	return NewConwaySequenceLine(nextNumbers)
 }
 
-func (sequence *ConwaySequence) countConsecutiveDuplicatesStartingAt(index int) int {
+func (sequence *ConwaySequenceLine) countConsecutiveDuplicatesStartingAt(index int) int {
 	occurences := 1
 	targetNumber := sequence.numbers[index]
 

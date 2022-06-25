@@ -4,12 +4,12 @@ import (
 	"conwaysequence/domain"
 )
 
-func ApplyConwaySequence(initialNumber, iterationCount int) []int {
-	sequence := domain.CreateInitialConwaySequence(initialNumber)
+func FindConwaySequenceLineUsecase(initialNumber, iterationCount int) []int {
+	sequenceLine := domain.CreateInitialConwaySequenceLine(initialNumber)
 
 	for i := 1; i < iterationCount; i++ {
-		sequence = sequence.NextSequence()
+		sequenceLine = sequenceLine.NextLine()
 	}
 
-	return sequence.GetNumbers()
+	return sequenceLine.GetNumbers()
 }
